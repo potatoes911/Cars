@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="test.css">
+
+</head>
+<body>
+
+  
+    <style>
+        body {
+            margin: 0;
+            background-image: url("Images/bgtest1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+    </style>
+
+
+   <a href="index.html">
+      <img src="Images/Logo.png" width="200" height="66" alt="Button"/>
+      </a>	
+    
+    <a href="Cars.html">
+        <img src="Images/button_cars.png" width="150" height="66" alt="Button"/>
+        </a>	
+    
+     <a href="Companies.html">
+        <img src="Images/button_companies.png" width="220" height="66" alt="Button"/>
+        </a>	
+    
+     <a href="Comments.html">
+        <img src="Images/button_comments.png" width="220" height="66" alt="Button"/>
+        </a>	
+        <a href="Videos.html">
+         <img src="Images/button_videos.png" width="200" height="66" alt="Button"/>
+         </a>	
+    
+    <hr size="1" width="1850" color="00ffff">
+
+     
+     <p>Welcome to the car website, your ultimate destination for everything automotive! Dive into the thrilling world of cars, where cutting-edge innovation meets timeless engineering. </p>
+     <p> Explore in-depth profiles of iconic car manufacturers, uncover the latest industry trends, and discover detailed reviews of classic gems and modern marvels alike. Whether you are </p>
+     <p> a gearhead fascinated by horsepower specs, a design enthusiast captivated by sleek curves, or a casual driver seeking reliable advice, our curated content fuels your passion. Engage </p>
+     <p> with fellow car lovers in our comment section—share your thoughts, debate brands, or swap stories about your dream ride. Here, every engine roar and polished chassis tells a story, </p>
+     <p> and we are excited for you to be part of it. Start exploring, stay informed, and join the conversation that drives the automotive world forward!</p>
+     
+     <style>
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: 10px;
+            border: 5px solid #022129; /* White border around container */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        /* Position next button to the right */
+        .next {
+            right: 0;
+        }
+
+        /* On hover */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="Images/18. Koenigsegg Jesko.jpeg" alt="Car 1">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="Images/buggati idk.jpg" alt="Car 2">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="Images/coolcar.jpg" alt="Car 3">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="Images/huracan performante.jpg" alt="Car 4">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function plusSlides(n) {
+    slideIndex += n;
+    showSlides();
+}
+
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    
+    if (slideIndex >= slides.length) {slideIndex = 0}
+    if (slideIndex < 0) {slideIndex = slides.length - 1}
+    
+    for (let slide of slides) {
+        slide.style.display = "none";
+    }
+    
+    slides[slideIndex].style.display = "block";
+}
+
+// Auto-advance every 4 seconds
+setInterval(() => plusSlides(1), 4000);
+</script>
+
+</body>
+</html>
