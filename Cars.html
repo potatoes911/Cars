@@ -41,205 +41,192 @@
     
     <hr size="1" width="1850" color="00ffff">
   
+    
+    <title>Luxury Car Poll</title>
     <style>
-        .container {
-          position: relative;
-          width: 50%;
-        }
-        
-        .image {
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          background-image: url("Images/bgtest1.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          min-height: 100vh;
+      }
+      .poll-container {
+        border: 1px solid #000000;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 20px auto; /* Center the poll container */
+        background-color: rgba(65, 104, 212, 0.9); /* Optional: Add a background for better readability */
+        text-align: center; /* Center-align content inside the container */
+    }
+    button[type="submit"] {
+        display: block; /* Ensure the button takes up its own line */
+        margin: 20px auto; /* Center the button horizontally */
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    #responses {
+        margin-top: 20px;
+        text-align: center; /* Center-align the "Previous Responses" section */
+    }
+    .response {
+        margin: 10px auto; /* Center each response */
+        padding: 10px;
+        background-color: #4f0a86;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center content inside each response */
+        max-width: 600px; /* Optional: Limit the width of responses */
+    }
+    .response img {
+        width: 50px;
+        height: 30px;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+      .car-options {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          margin: 20px 0;
+      }
+      .car-option label {
           display: block;
+          cursor: pointer;
+          border: 2px solid transparent;
+          padding: 10px;
+          border-radius: 8px;
+      }
+      .car-option input:checked + label {
+          border-color: #007bff;
+      }
+      .car-image {
           width: 100%;
-          height: auto;
-        }
-        
-        .overlay {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 100%;
-          width: 100%;
-          opacity: 0;
-          transition: .5s ease;
-          background-color: #008CBA;
-        }
-        
-        .container:hover .overlay {
-          opacity: 0.5;
-        }
-        
-        .text {
-          color: white;
-          font-size: 50px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          -webkit-transform: translate(-50%, -50%);
-          -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-          text-align: center;
-        }
-        </style>
-        </head>
-        <body>        
-        <div class="container">
-          <img src="Images/veneno.jpg" alt="Avatar" class="image">
-          <div class="overlay">
-            <div class="text">Lamborghini Veneno</div>
-          </div>
-        </div>
-
-
-        <style>
-            .container {
-              position: relative;
-              width: 50%;
-            }
+          height: 150px;
+          object-fit: cover;
+          border-radius: 4px;
+      }
+      .response img {
+          width: 50px;
+          height: 30px;
+          object-fit: cover;
+          margin-right: 10px;
+      }
+  </style>
+</head>
+<body>
+    <div class="poll-container">
+        <h2>Choose Your Favorite Luxury Car</h2>
+        <form id="carForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required><br><br>
             
-            .image {
-              display: block;
-              width: 100%;
-              height: auto;
-            }
-            
-            .overlay {
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              height: 100%;
-              width: 100%;
-              opacity: 0;
-              transition: .5s ease;
-              background-color: #008CBA;
-            }
-            
-            .container:hover .overlay {
-              opacity: 0.5;
-            }
-            
-            .text {
-              color: white;
-              font-size: 50px;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              -webkit-transform: translate(-50%, -50%);
-              -ms-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
-              text-align: center;
-            }
-            </style>
-            </head>
-            <body>        
-            <div class="container">
-              <img src="Images/avetndaor.png" alt="Avatar" class="image">
-              <div class="overlay">
-                <div class="text">Lamborghini Aventador</div>
+            <div class="car-options">
+              <div class="car-option">
+                  <input type="radio" name="car" value="Lamborghini" id="lamborghini" required>
+                  <label for="lamborghini">
+                      <img src="Images/Lamborghini-Aventador-SVJ.avif" alt="Lamborghini" class="car-image">
+                      Lamborghini
+                  </label>
               </div>
+              
+              <div class="car-option">
+                  <input type="radio" name="car" value="Ferrari" id="ferrari">
+                  <label for="ferrari">
+                      <img src="Images/Laferrari.avif" alt="Ferrari" class="car-image">
+                      Ferrari
+                  </label>
+              </div>
+              
+              <div class="car-option">
+                  <input type="radio" name="car" value="Bugatti" id="bugatti">
+                  <label for="bugatti">
+                      <img src="Images/Bugatti Chiron.jpg" alt="Bugatti" class="car-image">
+                      Bugatti
+                  </label>
+              </div>
+              
+              <div class="car-option">
+                  <input type="radio" name="car" value="McLaren" id="mclaren">
+                  <label for="mclaren">
+                      <img src="Images/mclaren-senna-013.jpg" alt="McLaren" class="car-image">
+                      McLaren
+                  </label>
+              </div>
+          </div>
             </div>
+            
+            <button type="submit">Submit</button>
+        </form>
 
-            <style>
-                .container {
-                  position: relative;
-                  width: 50%;
-                }
-                
-                .image {
-                  display: block;
-                  width: 100%;
-                  height: auto;
-                }
-                
-                .overlay {
-                  position: absolute;
-                  top: 0;
-                  bottom: 0;
-                  left: 0;
-                  right: 0;
-                  height: 100%;
-                  width: 100%;
-                  opacity: 0;
-                  transition: .5s ease;
-                  background-color: #008CBA;
-                }
-                
-                .container:hover .overlay {
-                  opacity: 0.5;
-                }
-                
-                .text {
-                  color: white;
-                  font-size: 50px;
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  -webkit-transform: translate(-50%, -50%);
-                  -ms-transform: translate(-50%, -50%);
-                  transform: translate(-50%, -50%);
-                  text-align: center;
-                }
-                </style>
-                </head>
-                <body>        
-                <div class="container">
-                  <img src="Images/Ferrarilaferrari.jpg" alt="Avatar" class="image">
-                  <div class="overlay">
-                    <div class="text">Ferrari La Ferrari</div>
-                  </div>
-                </div>
+        
+        <div id="responses"></div>
+    </div>
 
-                <style>
-                    .container {
-                      position: relative;
-                      width: 50%;
-                    }
-                    
-                    .image {
-                      display: block;
-                      width: 100%;
-                      height: auto;
-                    }
-                    
-                    .overlay {
-                      position: absolute;
-                      top: 0;
-                      bottom: 0;
-                      left: 0;
-                      right: 0;
-                      height: 100%;
-                      width: 100%;
-                      opacity: 0;
-                      transition: .5s ease;
-                      background-color: #008CBA;
-                    }
-                    
-                    .container:hover .overlay {
-                      opacity: 0.5;
-                    }
-                    
-                    .text {
-                      color: white;
-                      font-size: 50px;
-                      position: absolute;
-                      top: 50%;
-                      left: 50%;
-                      -webkit-transform: translate(-50%, -50%);
-                      -ms-transform: translate(-50%, -50%);
-                      transform: translate(-50%, -50%);
-                      text-align: center;
-                    }
-                    </style>
-                    </head>
-                    <body>        
-                    <div class="container">
-                      <img src="Images/chiron.jpg" alt="Avatar" class="image">
-                      <div class="overlay">
-                        <div class="text">Bugatti Chiron</div>
-                      </div>
+    <script>
+        const carImages = {
+    Lamborghini: 'Images/Lamborghini-Aventador-SVJ.avif',
+    Ferrari: 'Images/Laferrari.avif',
+    Bugatti: 'Images/Bugatti Chiron.jpg',
+    McLaren: 'Images/mclaren-senna-013.jpg'
+};
+
+        document.getElementById('carForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userName = document.getElementById('name').value.trim();
+            const carChoice = document.querySelector('input[name="car"]:checked').value;
+            
+            const response = {
+                name: userName,
+                car: carChoice,
+                timestamp: new Date().toISOString()
+            };
+
+            const existingResponses = JSON.parse(localStorage.getItem('carPollResponses')) || [];
+            existingResponses.push(response);
+            localStorage.setItem('carPollResponses', JSON.stringify(existingResponses));
+
+            showResponses();
+            this.reset();
+        });
+
+        function showResponses() {
+            const responsesContainer = document.getElementById('responses');
+            responsesContainer.innerHTML = '';
+            
+            const responses = JSON.parse(localStorage.getItem('carPollResponses')) || [];
+            
+            responses.forEach(response => {
+                const div = document.createElement('div');
+                div.className = 'response';
+                div.innerHTML = `
+                    <img src="${carImages[response.car]}" alt="${response.car}">
+                    <div>
+                        <strong>${response.name}</strong> chose 
+                        <em>${response.car}</em>
+                        <small>(${new Date(response.timestamp).toLocaleString()})</small>
                     </div>
+                `;
+                responsesContainer.appendChild(div);
+            });
+        }
+
+        showResponses();
+    </script>
 </body>
 </html>
